@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 require 'net/http'
+require 'openssl'
 require 'uri'
 require 'json'
 
@@ -11,7 +12,8 @@ SCHEDULER.every '30s', :first_in => 0 do |job|
   url = URI.parse("#{server}/job/list_selected_namespaces_per_PR/lastSuccessfulBuild/execution/node/3/ws/prChecks.json")
   http = Net::HTTP.new(url.host, url.port)
   request = Net::HTTP::Get.new(url.request_uri)
-  request.basic_auth("themarcelor@gmail.com", ENV['GITHUB_TOKEN'])
+  github_token = ENV['GITHUB_TOKEN'].dup
+  request.basic_auth 'themarcelor@gmail.com', github_token.delete!("\n")
   http.use_ssl = (url.scheme == 'https')
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   response = http.request(request)
