@@ -20,12 +20,12 @@ SCHEDULER.every '30s', :first_in => 0 do |job|
   j = JSON[response.body]
   
   hrows = [
-    { cols: [ {value: 'Repo'}, {value: 'Pull Request'}, {value: 'Jenkins namespace'} ] }
+    { cols: [ {value: 'Repo'}, {value: 'Pull Request'}, {value: 'Jenkins namespace'}, {value: 'started by'} ] }
   ]
 
   rows = []
   j.keys.each { |pr|
-    rows << { cols: [ { value: j[pr]['repo'] }, { value: pr }, { value: j[pr]['namespace'] } ] }
+    rows << { cols: [ { value: j[pr]['repo'] }, { value: pr }, { value: j[pr]['namespace'] }, { value: j[pr]['by'] } ] }
   }
 
   send_event('my-table', { hrows: hrows, rows: rows } )

@@ -1,0 +1,6 @@
+---
+current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"integration202002\"}],\"id\":\"current_release\",\"updatedAt\":1580877650668}\n\n"
+my-table: "data: {\"hrows\":[{\"cols\":[{\"value\":\"Repo\"},{\"value\":\"Pull Request\"},{\"value\":\"Jenkins
+  namespace\"},{\"value\":\"started by\"}]}],\"rows\":[],\"id\":\"my-table\",\"updatedAt\":1580877651296}\n\n"
+total_num_of_tests: "data: {\"current\":252,\"id\":\"total_num_of_tests\",\"updatedAt\":1580877651297}\n\n"
+num_of_manual_tests: "data: {\"current\":120,\"id\":\"num_of_manual_tests\",\"updatedAt\":1580877651297}\n\n"
