@@ -1,12 +1,16 @@
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="Welcome" data-view="Text" data-title="Gen3 QA Metrics" data-text="Monitoring what's going on in the QA world" data-moreinfo="more info TBD..."></div>
     </li>
 
-  <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+  <li data-row="1" data-col="1" data-sizex="3" data-sizey="2">
     <div data-id="my-table" data-view="Table" data-title="PR Checks" data-moreinfo="CI jobs running right now..."></div>
+  </li>
+
+  <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <div data-view="Countdown" data-title="NEXT CODE FREEZE" data-end="21-Feb-2020 18:00:00"></div>
   </li>
 
   <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -19,10 +23,6 @@
 
   <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
     <div data-id="current_release" data-view="List" data-unordered="true" data-title="Current Release" style="background-color:#96bf48;"></div>
-  </li>
-
-  <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-    <div data-view="Countdown" data-title="NEXT CODE FREEZE" data-end="21-Feb-2020 18:00:00"></div>
   </li>
 
   </ul>
