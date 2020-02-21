@@ -10,17 +10,27 @@ $background-color:  #dc5945;
 
   background-color: $background-color;
 
-  h2 { font-size: 25px;}
+  .title {
+    font-size: 30px;
+    kerning: 1px;
+  }
 
-  h1 { font-size: 25px;}
+  h1 { font-size: 40px;}
 
   .countdown-time {
     margin-top: 10px;
-    color: gold;
+    color: lighten(gold, 10%);
+    font-weight: bold;
   }
 
+  .more-info {
+    color: lighten(gold, 10%);
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+
   .before-more-info {
-    font-size: 15px;
     position: absolute;
     bottom: 52px;
     left: 0;
