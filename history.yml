@@ -1,6 +1,6 @@
 ---
-current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"integration202002\"}],\"id\":\"current_release\",\"updatedAt\":1581107080682}\n\n"
+current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"2020.03\"}],\"id\":\"current_release\",\"updatedAt\":1583161438441}\n\n"
 my-table: "data: {\"hrows\":[{\"cols\":[{\"value\":\"Repo\"},{\"value\":\"Pull Request\"},{\"value\":\"Jenkins
   namespace\"},{\"value\":\"started by\"}]}],\"rows\":[],\"id\":\"my-table\",\"updatedAt\":1580877651296}\n\n"
-total_num_of_tests: "data: {\"current\":256,\"id\":\"total_num_of_tests\",\"updatedAt\":1581107080841}\n\n"
-num_of_manual_tests: "data: {\"current\":124,\"id\":\"num_of_manual_tests\",\"updatedAt\":1581107080841}\n\n"
+total_num_of_tests: "data: {\"current\":257,\"id\":\"total_num_of_tests\",\"updatedAt\":1583161438605}\n\n"
+num_of_manual_tests: "data: {\"current\":128,\"id\":\"num_of_manual_tests\",\"updatedAt\":1583161438605}\n\n"
