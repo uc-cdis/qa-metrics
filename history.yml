@@ -1,6 +1,24 @@
 ---
-current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"2020.03\"}],\"id\":\"current_release\",\"updatedAt\":1583161438441}\n\n"
+current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"2020.03\"}],\"id\":\"current_release\",\"updatedAt\":1583213218362}\n\n"
 my-table: "data: {\"hrows\":[{\"cols\":[{\"value\":\"Repo\"},{\"value\":\"Pull Request\"},{\"value\":\"Jenkins
   namespace\"},{\"value\":\"started by\"}]}],\"rows\":[],\"id\":\"my-table\",\"updatedAt\":1580877651296}\n\n"
-total_num_of_tests: "data: {\"current\":257,\"id\":\"total_num_of_tests\",\"updatedAt\":1583161438605}\n\n"
-num_of_manual_tests: "data: {\"current\":128,\"id\":\"num_of_manual_tests\",\"updatedAt\":1583161438605}\n\n"
+total_num_of_tests: "data: {\"current\":257,\"id\":\"total_num_of_tests\",\"updatedAt\":1583213098666}\n\n"
+num_of_manual_tests: "data: {\"current\":128,\"id\":\"num_of_manual_tests\",\"updatedAt\":1583213098666}\n\n"
+fence_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"5\"},{\"label\":\"total
+  failures\",\"value\":\"2\"},{\"label\":\"success rate\",\"value\":\"60.0%\"},{\"label\":\"Last
+  force merge\",\"value\":\"\"}],\"id\":\"fence_ci_stats\",\"updatedAt\":1583213105195}\n\n"
+gen3qa_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"2\"},{\"label\":\"total
+  failures\",\"value\":\"0\"},{\"label\":\"success rate\",\"value\":\"100.0%\"},{\"label\":\"Last
+  force merge\",\"value\":\"\"}],\"id\":\"gen3qa_ci_stats\",\"updatedAt\":1583213102140}\n\n"
+arborist_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"0\"},{\"label\":\"total
+  failures\",\"value\":\"0\"},{\"label\":\"success rate\",\"value\":\"100.0%\"},{\"label\":\"Last
+  force merge\",\"value\":\"\"}],\"id\":\"arborist_ci_stats\",\"updatedAt\":1583213099381}\n\n"
+indexd_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"1\"},{\"label\":\"total
+  failures\",\"value\":\"0\"},{\"label\":\"success rate\",\"value\":\"100.0%\"},{\"label\":\"Last
+  force merge\",\"value\":\"\"}],\"id\":\"indexd_ci_stats\",\"updatedAt\":1583213102070}\n\n"
+cdismanifest_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"35\"},{\"label\":\"total
+  failures\",\"value\":\"6\"},{\"label\":\"success rate\",\"value\":\"82.86%\"},{\"label\":\"Last
+  force merge\",\"value\":\"PR #1151 -> Merged by: diw2\"}],\"id\":\"cdismanifest_ci_stats\",\"updatedAt\":1583213121910}\n\n"
+dataportal_ci_stats: "data: {\"items\":[{\"label\":\"num of PRs\",\"value\":\"5\"},{\"label\":\"total
+  failures\",\"value\":\"0\"},{\"label\":\"success rate\",\"value\":\"100.0%\"},{\"label\":\"Last
+  force merge\",\"value\":\"\"}],\"id\":\"dataportal_ci_stats\",\"updatedAt\":1583213106291}\n\n"
