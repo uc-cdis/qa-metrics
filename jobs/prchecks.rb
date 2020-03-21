@@ -13,9 +13,8 @@ SCHEDULER.every '30s', :first_in => 0 do |job|
   http = Net::HTTP.new(url.host, url.port)
   request = Net::HTTP::Get.new(url.request_uri)
   github_token = ENV['GITHUB_TOKEN'].dup
-  request.basic_auth 'themarcelor@gmail.com', github_token.delete!("\n")
-  http.use_ssl = (url.scheme == 'https')
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request.basic_auth 'themarcelor@gmail.com', github_token.chomp
+  http.use_ssl = true
   response = http.request(request)
 
   # Convert to JSON

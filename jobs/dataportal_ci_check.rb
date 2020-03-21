@@ -9,9 +9,8 @@ def httpGetter(url_str)
   url = URI.parse(url_str)
   http = Net::HTTP.new(url.host, url.port)
   request = Net::HTTP::Get.new(url.request_uri)
-  request['Authorization'] = "token #{ENV['GITHUB_TOKEN'].dup}"
-  http.use_ssl = (url.scheme == 'https')
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request['Authorization'] = "token #{ENV['GITHUB_TOKEN'].chomp}"
+  http.use_ssl = true
   response = http.request(request)
   j = JSON[response.body]
 end
