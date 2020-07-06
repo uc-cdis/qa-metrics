@@ -1,5 +1,5 @@
 ---
-current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"2020.06\"}],\"id\":\"current_release\",\"updatedAt\":1594060603488}\n\n"
+current_release: "data: {\"items\":[{\"label\":\"->\",\"value\":\"2020.03\"}],\"id\":\"current_release\",\"updatedAt\":1583213218362}\n\n"
 my-table: "data: {\"hrows\":[{\"cols\":[{\"value\":\"Repo\"},{\"value\":\"Pull Request\"},{\"value\":\"Jenkins
   namespace\"},{\"value\":\"started by\"}]}],\"rows\":[],\"id\":\"my-table\",\"updatedAt\":1580877651296}\n\n"
 total_num_of_tests: "data: {\"current\":257,\"id\":\"total_num_of_tests\",\"updatedAt\":1583213098666}\n\n"

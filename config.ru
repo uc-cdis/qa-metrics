@@ -1,10 +1,5 @@
 require 'dashing'
 
-set :assets_prefix, '/qa-metrics/assets'
-map Sinatra::Application.assets_prefix do
-  run Sinatra::Application.sprockets
-end
-
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'
 
@@ -24,4 +19,4 @@ map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
 
-run Rack::URLMap.new('/qa-metrics' => Sinatra::Application)
+run Sinatra::Application
