@@ -1,6 +1,6 @@
 require 'dashing'
 
-set :assets_prefix, '/qa-metrics/assets'
+set :assets_prefix, '/qa-dashboard/assets'
 map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
@@ -24,4 +24,4 @@ map Sinatra::Application.assets_prefix do
   run Sinatra::Application.sprockets
 end
 
-run Rack::URLMap.new('/qa-metrics' => Sinatra::Application)
+run Rack::URLMap.new('/qa-dashboard' => Sinatra::Application)
