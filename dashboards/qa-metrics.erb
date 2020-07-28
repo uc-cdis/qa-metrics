@@ -10,7 +10,29 @@
   </li>
 
   <li data-row="2" data-col="1" data-max-sizey="1" data-sizex="1" data-sizey="1">
-    <div data-view="Countdown" data-title="Next FEATURE FREEZE" data-end="14-August-2020 17:00:00"></div>
+    <%
+      require 'date'
+
+      deadline = nil
+      the_date = Date.today
+      #puts "the_date = #{the_date}"
+
+      deadline = Date.new(the_date.year, the_date.month, 1)
+      deadline += (5 - deadline.wday) % 7
+      deadline += 7
+      if the_date > deadline
+        deadline = Date.new(the_date.year, the_date.month + 1, 1)
+        deadline += (5 - deadline.wday) % 7
+        deadline += 7
+      end
+
+      #puts "deadline = #{deadline}"
+      #puts deadline.strftime("%B")
+
+      monthstr = deadline.strftime("%B")
+      data_end = "#{deadline.day}-#{monthstr}-#{deadline.year} 17:00:00"
+    %>
+    <div data-view="Countdown" data-title="Next FEATURE FREEZE" data-end="<%= data_end %>"></div>
   </li>
 
   <li data-row="2" data-col="2" data-sizex="1" data-sizey="1" data-max-sizey="1">
