@@ -20,7 +20,7 @@
       deadline = Date.new(the_date.year, the_date.month, 1)
       deadline += (5 - deadline.wday) % 7
       deadline += 7
-      if the_date >= deadline
+      if the_date > deadline
         deadline = Date.new(the_date.year, the_date.month + 1, 1)
         deadline += (5 - deadline.wday) % 7
         deadline += 7
