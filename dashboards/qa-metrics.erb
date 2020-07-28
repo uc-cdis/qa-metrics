@@ -17,10 +17,13 @@
       the_date = Date.today
       #puts "the_date = #{the_date}"
 
-      if the_date < (the_date.next_month - the_date.next_month.mday + 1)
-        deadline = (the_date.next_month - the_date.next_month.mday + 1) + 13
-      else
-        deadline = (the_date - the_date.mday + 14)
+      deadline = Date.new(the_date.year, the_date.month, -1)
+      deadline -= (deadline.wday - 5) % 7
+      deadline -= 14
+      if the_date >= deadline
+        deadline = Date.new(the_date.year, the_date.month + 1, -1)
+        deadline -= (deadline.wday - 5) % 7
+        deadline -= 14
       end
 
       #puts "deadline = #{deadline}"
