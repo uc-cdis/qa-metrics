@@ -12,40 +12,38 @@ def httpGetter(url_str)
   request['Authorization'] = "token #{ENV['GITHUB_TOKEN'].chomp}"
   http.use_ssl = true
   response = http.request(request)
-  j = JSON[response.body]
+  http_response = JSON[response.body]
 end
+
 
 server = "https://api.github.com"
 repo = "fence"
-
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
 SCHEDULER.every '4h', :first_in => 0 do |job|
-  j = httpGetter("#{server}/repos/uc-cdis/#{repo}/pulls\?state=all\&per_page=100")
-   
+  pull_requests = httpGetter("#{server}/repos/uc-cdis/#{repo}/pulls\?state=all\&per_page=100")
   total_prs = 0
   total_failures = 0
   last_force_merge = ""
-   
-  j.each_with_index { |idx, pr|
-    puts("#{j[pr]['number']} - #{j[pr]['updated_at']}")    
-    updated_at = Time.parse(j[pr]['updated_at'])
+  pull_requests.each do |pr|
+    puts("#{pr['number']} - #{pr['updated_at']}")    
+    updated_at = Time.parse(pr['updated_at'])
     # only PRs from the last week
     puts("updated_at: #{updated_at}")
     puts("7d ago: #{Time.now - (3600 * 24 * 7)}")
     if updated_at >= Time.now - (3600 * 24 * 7)
       total_prs = total_prs + 1
-      j2 = httpGetter("#{server}/repos/uc-cdis/#{repo}/pulls/#{j[pr]['number']}")
-      j3 = httpGetter("#{j2['statuses_url']}")
-      next unless j3.length() > 0
-      puts("PR ##{j[pr]['number']} -> state: #{j3[0]['state']}")
-      if j3[0]['state'] != 'success'
+      recent_pr = httpGetter("#{server}/repos/uc-cdis/#{repo}/pulls/#{pr['number']}")
+      recent_pr_status = httpGetter("#{recent_pr['statuses_url']}")
+      next unless recent_pr_status.length() > 0
+      puts("PR ##{pr['number']} -> state: #{recent_pr_status[0]['state']}")
+      if recent_pr_status[0]['state'] != 'success' and recent_pr["base"]["ref"] == "master"
         total_failures = total_failures + 1
-        if j2.has_key? 'merged_at' and j2['merged_at'] != nil
-          last_force_merge = "PR ##{j[pr]['number']} -> Merged by: #{j2['user']['login']}"
+        if recent_pr.has_key? 'merged_at' and recent_pr['merged_at'] != nil
+          last_force_merge = "PR ##{pr['number']} -> Merged by: #{recent_pr['user']['login']}"
         end
       end
     end
-  }
+  end
 
   puts("total prs: #{total_prs}")
   puts("failures: #{total_failures}")
