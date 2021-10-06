@@ -11,7 +11,7 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
   url = URI.parse("#{server}/job/qa-metrics/ws/qa-metrics.json")
   http = Net::HTTP.new(url.host, url.port)
   request = Net::HTTP::Get.new(url.request_uri)
-  request.basic_auth("themarcelor@gmail.com", ENV['GITHUB_TOKEN'].chomp)
+  request.basic_auth("PlanXCyborg", ENV['GITHUB_TOKEN'].chomp)
   http.use_ssl = true
   response = http.request(request)
 
